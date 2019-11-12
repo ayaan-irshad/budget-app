@@ -1,0 +1,299 @@
+.left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.budget__container {
+  background: -webkit-gradient(linear, left top, right bottom, from(#2196F3), color-stop(0%, #090979), color-stop(70%, #009688));
+  background: linear-gradient(to right bottom, #2196F3 0%, #090979 0%, #009688 70%);
+  height: 20rem;
+  width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 800;
+  font-size: 2rem;
+  text-align: center;
+  color: #ffffff;
+  font-family: Ubuntu;
+  border-radius: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.budget__sections {
+  background: -webkit-gradient(linear, left top, right bottom, from(#2196F3), color-stop(0%, #fbfbfb), color-stop(70%, #f1f1f1));
+  background: linear-gradient(to right bottom, #2196F3 0%, #fbfbfb 0%, #f1f1f1 70%);
+  height: 20rem;
+  width: 50vw;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 800;
+  font-size: 2rem;
+  text-align: center;
+  color: #000000;
+  font-family: Ubuntu;
+  border-radius: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.budget__sections > * {
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 70%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 40%;
+}
+
+input,
+span,
+label {
+  font-family: 'Ubuntu', sans-serif;
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  border: none;
+  font-size: 22px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+/* Question */
+input.question,
+input.add__value {
+  font-size: 48px;
+  font-weight: 300;
+  border-radius: 2px;
+  margin: 0;
+  border: none;
+  width: 80%;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden;
+  /* Hack to make "rows" attribute apply in Firefox. */
+}
+
+/* Underline and Placeholder */
+input.question + label,
+input.add__value + label {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  width: 10%;
+  border-top: 1px solid red;
+  -webkit-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+  height: 0px;
+}
+
+input.question:focus + label,
+input.add__value:focus + label {
+  width: 80%;
+}
+
+input.question:focus,
+input.question:valid {
+  padding-top: 35px;
+}
+
+input.add__value:valid,
+input.add__value:focus {
+  margin-top: 35px;
+}
+
+input.question:focus + label > span,
+input.question:valid + label > span {
+  top: -100px;
+  font-size: 22px;
+  color: #333;
+}
+
+input.add__focus:focus + label > span,
+input.add__focus:valid + label > span {
+  top: -150px;
+  font-size: 22px;
+  color: #333;
+}
+
+input.question:valid + label,
+input.add__focus:valid + label {
+  border-color: green;
+}
+
+input.question:invalid,
+input.add__focus:invalid {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+input.question + label > span,
+input.add__focus + label > span {
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  color: #8F8F8F;
+  font-size: 48px;
+  top: -66px;
+  left: 0px;
+  z-index: -1;
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+button[type="submit"] {
+  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  display: block;
+  opacity: 0;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #EEE;
+}
+
+button[type="submit"]:active {
+  background: #999;
+}
+
+input.question:valid ~ button[type="submit"], input.add__focus:valid ~ button[type="submit"] {
+  -webkit-animation: appear 1s forwards;
+  animation: appear 1s forwards;
+}
+
+input.question:invalid ~ button[type="submit"], input.add__focus:invalid ~ button[type="submit"] {
+  display: none;
+}
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+.right .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: cadetblue;
+  font-family: Lato;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.add__type {
+  border: 2px solid cadetblue;
+  width: 38%;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  outline: none;
+  font-size: x-large;
+  font-family: Ubuntu;
+}
+
+.stolen {
+  width: 10px;
+  height: 10px;
+}
+
+.item {
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  font-family: Ubuntu;
+  height: 5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: x-large;
+  border-radius: 18px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 18rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.item__income {
+  background: linear-gradient(135deg, #7dff56, #e1ff6b);
+  border-bottom: outset #28ff00a1;
+}
+
+.item__expense {
+  border-bottom: outset #ff0024a1;
+  background: linear-gradient(135deg, #ef9012, #ff5da1);
+}
+
+.item__delete {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.item__delete--btn {
+  border: none;
+  background: transparent;
+}
+
+.item:hover .item__delete {
+  opacity: 1;
+  display: block;
+  visibility: visible;
+}
+/*# sourceMappingURL=main.css.map */
